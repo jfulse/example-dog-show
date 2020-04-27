@@ -1,3 +1,5 @@
+/* eslint react/no-array-index-key: 0 */
+
 import React, { Component } from 'react';
 
 class DogShow extends Component {
@@ -70,7 +72,7 @@ class DogShow extends Component {
         </h2>
         <br />
         <br />
-        {Boolean(imageUrls) && imageUrls.map((url) => <img src={url} alt="dog" />)}
+        {Boolean(imageUrls) && imageUrls.map((url, idx) => <img key={`dog-image-${idx}`} src={url} alt="dog" />)}
         {Boolean(error) && <span>{error}</span>}
       </>
     );
